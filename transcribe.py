@@ -4,8 +4,8 @@ import whisper
 
 model = whisper.load_model("base")
 
-input_folder = "./audios"
-output_folder = "./transcriptions"
+input_folder = r"C:\Users\valdez\Documents\Transcription\audios"
+output_folder = r"C:\Users\valdez\Documents\Transcription\transcriptions"
 os.makedirs(output_folder, exist_ok=True)
 
 for filename in os.listdir(input_folder):
