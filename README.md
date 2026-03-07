@@ -1,10 +1,10 @@
-# 🎙️ Audio Transcription Script
+# Audio Transcription Script
 
-Python script developed to automate the transcription of audio files into a .txt file using OPENAI's Whisper base model
+Python script developed to automate the transcription of audio files into a .txt file using OpenAI's Whisper base model
 
 ---
  
-## 🖥️ Features
+## Features
 
 - Automatically transcribes audio files from a specified folder.
 - Supports .mp3, .wav, and .m4a formats.
@@ -13,7 +13,7 @@ Python script developed to automate the transcription of audio files into a .txt
 
 ---
 
-## 📂 Project Structure Example
+## Project Structure Example
 ```text
 Transcription/
 │
@@ -27,13 +27,13 @@ Transcription/
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 - Python
-- Whisper
+- WhisperAI
 
 ---
 
-## 🚀 How To Use
+## How To Use
 1. Clone the repository
 ```bash
 git clone git@github.com:leovaldezhq/transcript.git
@@ -51,12 +51,8 @@ python transcribe.py
 5. Check the transcriptions folder for output .txt files
 
 ---
-## 📸 Example Output
+## Example Output
 <img src="assets/transcription_sc.png" alt="Screenshot of Example Output" width="800" />
 ⚠️<i> FP16 warning is normal when running on CPU </i>
 
 ---
-
-Developed by Leo Valdez
-
-
