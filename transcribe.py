@@ -1,11 +1,15 @@
 import os
 import time
+from dotenv import load_dotenv
 from faster_whisper import WhisperModel
 
+load_dotenv()
 model = WhisperModel("small", device="cpu", compute_type="int8")
 
-input_folder = r"/home/input_path"
-output_folder = r"/home/output_path"
+input_folder = os.getenv("INPUT_PATH")
+output_folder = os.getenv("OUTPUT_PATH")
+
+
 os.makedirs(output_folder, exist_ok=True)
 
 for filename in os.listdir(input_folder):
@@ -16,7 +20,13 @@ for filename in os.listdir(input_folder):
 
         start_time = time.perf_counter()
 
-        segments, info = model.transcribe(audio_path, language="pt", vad_filter=True)
+        print("Loading:", audio_path)
+
+        segments, info = model.transcribe(
+            audio_path,
+            language="pt",
+            vad_filter=True
+        )
 
         text_parts = []
 
@@ -33,5 +43,5 @@ for filename in os.listdir(input_folder):
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(text)
 
-        print(f"Saved transcription to {output_file}"
+        print(f"Saved transcription to {output_file}",
             f"Transcription completed in {elapsed:.2f} s")
